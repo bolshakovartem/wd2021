@@ -1,0 +1,222 @@
+artem@Artem MINGW64 ~ (main)
+$ ls
+'3D Objects'/
+ AppData/
+'Application Data'@
+'Cisco Packet Tracer 7.3.1'/
+ Contacts/
+ Cookies@
+ Desktop/
+ Documents/
+ Downloads/
+ Favorites/
+ Intel/
+ IntelGraphicsProfiles/
+ Links/
+'Local Settings'@
+ MicrosoftEdgeBackups/
+ Music/
+ NTUSER.DAT
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+ NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+ NetHood@
+ OneDrive/
+ Pictures/
+ PrintHood@
+ PycharmProjects/
+ README.md
+ Recent@
+'Saved Games'/
+ Searches/
+ SendTo@
+ Sti_Trace.log
+ Untitled.ipynb
+ Videos/
+ ansel/
+ maxima/
+ ntuser.dat.LOG1
+ ntuser.dat.LOG2
+ ntuser.ini
+ source/
+ svrum/
+'Мои документы'@
+ Шаблоны@
+'большаков артем.ipynb'
+'главное меню'@
+
+artem@Artem MINGW64 ~ (main)
+$ dir
+3D\ Objects
+AppData
+Application\ Data
+Cisco\ Packet\ Tracer\ 7.3.1
+Contacts
+Cookies
+Desktop
+Documents
+Downloads
+Favorites
+Intel
+IntelGraphicsProfiles
+Links
+Local\ Settings
+MicrosoftEdgeBackups
+Music
+NTUSER.DAT
+NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TM.blf
+NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000001.regtrans-ms
+NTUSER.DAT{53b39e88-18c4-11ea-a811-000d3aa4692b}.TMContainer00000000000000000002.regtrans-ms
+NetHood
+OneDrive
+Pictures
+PrintHood
+PycharmProjects
+README.md
+Recent
+Saved\ Games
+Searches
+SendTo
+Sti_Trace.log
+Untitled.ipynb
+Videos
+ansel
+maxima
+ntuser.dat.LOG1
+ntuser.dat.LOG2
+ntuser.ini
+source
+svrum
+Мои\ документы
+Шаблоны
+большаков\ артем.ipynb
+главное\ меню
+
+artem@Artem MINGW64 ~ (main)
+$ mkdir dev
+
+artem@Artem MINGW64 ~ (main)
+$ cd dev
+
+artem@Artem MINGW64 ~/dev (main)
+$ nkdir first
+bash: nkdir: command not found
+
+artem@Artem MINGW64 ~/dev (main)
+$ mkdir first
+
+artem@Artem MINGW64 ~/dev (main)
+$ cd first/
+
+artem@Artem MINGW64 ~/dev/first (main)
+$ git init
+Initialized empty Git repository in C:/Users/artem/dev/first/.git/
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ ls
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git status
+starting fsmonitor-daemon in 'C:/Users/artem/dev/first'
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git add .
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git commit
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'artem@Artem.(none)')
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git init
+Reinitialized existing Git repository in C:/Users/artem/dev/first/.git/
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git add .
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git commit -am 'typo resolved'
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'artem@Artem.(none)')
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git config --global user.name "Artem"
+
+artem@Artem MINGW64 ~/dev/first (master)
+$ git config --global user.email "artemis4650@gmail.com"
+
+artem@Artem MINGW64 ~/dev/first (master)
+$
