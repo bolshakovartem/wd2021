@@ -44,11 +44,11 @@ for(let i=0; i < carts.length; i++){
     carts[i].addEventListener('click', function(){
         cartNumbers(products[i]);
         totalPrice(products[i]);
-    })
+    });
 }
 
 function loadCartsNumber(){
-    let productNumbers = localStorage.getItem('cartNumbers');
+    let productNumbers = sessionStorage.getItem('cartNumbers');
 
     if(productNumbers){
         document.querySelector(".cart span").textContent = productNumbers;
@@ -58,16 +58,16 @@ function loadCartsNumber(){
 
 function cartNumbers(product){
     
-    let productNumbers = localStorage.getItem('cartNumbers');
+    let productNumbers = sessionStorage.getItem('cartNumbers');
 
     productNumbers = parseInt(productNumbers);
 
     if (productNumbers){
-        localStorage.setItem('cartNumbers', productNumbers + 1);
+        sessionStorage.setItem('cartNumbers', productNumbers + 1);
         document.querySelector(".cart span").textContent = productNumbers + 1;
     }
     else{
-        localStorage.setItem('cartNumbers', 1);
+        sessionStorage.setItem('cartNumbers', 1);
         document.querySelector(".cart span").textContent = 1;
 
     }
@@ -75,8 +75,8 @@ function cartNumbers(product){
 }
 
 function setItems(product) {
-    let cartItems = localStorage.getItem('productsInCart');
-    cartItems = JSON.parse(cartItems)
+    let cartItems = sessionStorage.getItem('productsInCart');
+    cartItems = JSON.parse(cartItems);
 
     if(cartItems != null){
         
@@ -95,43 +95,37 @@ function setItems(product) {
             [product.tagname]: product
         }
     }
-    
-    
-    localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+    sessionStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
 
 function totalPrice(product){
 
-   //console.log(product.price);
-    let cartPrice = localStorage.getItem("totalPrice");
+    let cartPrice = sessionStorage.getItem("totalPrice");
 
     if(cartPrice != null){
         cartPrice = parseInt(cartPrice);
-        localStorage.setItem("totalPrice", cartPrice + product.price);
+        sessionStorage.setItem("totalPrice", cartPrice + product.price);
     }
     else{
-        localStorage.setItem("totalPrice", product.price);
+        sessionStorage.setItem("totalPrice", product.price);
     }
 }   
 function displayCart(){
-    let cartItems = localStorage.getItem("productsInCart");
+    let cartItems = sessionStorage.getItem("productsInCart");
     cartItems = JSON.parse(cartItems);
     let productContainer=document.querySelector(".products");
-    let cartPrice = localStorage.getItem("totalPrice");
+    let cartPrice = sessionStorage.getItem("totalPrice");
 
     if(cartItems && productContainer ){
         productContainer.innerHTML = '';
         Object.values(cartItems).map(item => {
             productContainer.innerHTML += `
             <div class="product">
-                <img src="./img/outline_delete_black_24dp.png">
-                <img src="./img/${item.tagname}.jpg">
                 <span>${item.name}</span>
             </div>
             <div class="price">${item.price} UAH</div>
             <div class="quantity">                          
-            <img src="./img/outline_add_black_24dp.png"><span>${item.inCart}</span>
-            <img src="./img/outline_remove_black_24dp.png">
+            <span>${item.inCart}</span>
             </div>
             <div class="total">
                 ${item.inCart * item.price},00 UAH
@@ -141,11 +135,11 @@ function displayCart(){
         });
 
         productContainer.innerHTML += `
-        <div class="baskettotalContainer>
+        <div class="basketTotalContainer>
             <h4 class="basketTotalTitle></h4>
             <h4 class="basketTotal">${cartPrice},00 UAH</h4>
-        
-        `
+
+        `;
 
 
     }

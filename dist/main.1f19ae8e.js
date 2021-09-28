@@ -169,7 +169,7 @@ for (var i = 0; i < carts.length; i++) {
 }
 
 function loadCartsNumber() {
-  var productNumbers = localStorage.getItem('cartNumbers');
+  var productNumbers = sessionStorage.getItem('cartNumbers');
 
   if (productNumbers) {
     document.querySelector(".cart span").textContent = productNumbers;
@@ -177,14 +177,14 @@ function loadCartsNumber() {
 }
 
 function cartNumbers(product) {
-  var productNumbers = localStorage.getItem('cartNumbers');
+  var productNumbers = sessionStorage.getItem('cartNumbers');
   productNumbers = parseInt(productNumbers);
 
   if (productNumbers) {
-    localStorage.setItem('cartNumbers', productNumbers + 1);
+    sessionStorage.setItem('cartNumbers', productNumbers + 1);
     document.querySelector(".cart span").textContent = productNumbers + 1;
   } else {
-    localStorage.setItem('cartNumbers', 1);
+    sessionStorage.setItem('cartNumbers', 1);
     document.querySelector(".cart span").textContent = 1;
   }
 
@@ -192,7 +192,7 @@ function cartNumbers(product) {
 }
 
 function setItems(product) {
-  var cartItems = localStorage.getItem('productsInCart');
+  var cartItems = sessionStorage.getItem('productsInCart');
   cartItems = JSON.parse(cartItems);
 
   if (cartItems != null) {
@@ -206,33 +206,32 @@ function setItems(product) {
     cartItems = _defineProperty({}, product.tagname, product);
   }
 
-  localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+  sessionStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
 
 function totalPrice(product) {
-  //console.log(product.price);
-  var cartPrice = localStorage.getItem("totalPrice");
+  var cartPrice = sessionStorage.getItem("totalPrice");
 
   if (cartPrice != null) {
     cartPrice = parseInt(cartPrice);
-    localStorage.setItem("totalPrice", cartPrice + product.price);
+    sessionStorage.setItem("totalPrice", cartPrice + product.price);
   } else {
-    localStorage.setItem("totalPrice", product.price);
+    sessionStorage.setItem("totalPrice", product.price);
   }
 }
 
 function displayCart() {
-  var cartItems = localStorage.getItem("productsInCart");
+  var cartItems = sessionStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
   var productContainer = document.querySelector(".products");
-  var cartPrice = localStorage.getItem("totalPrice");
+  var cartPrice = sessionStorage.getItem("totalPrice");
 
   if (cartItems && productContainer) {
     productContainer.innerHTML = '';
     Object.values(cartItems).map(function (item) {
-      productContainer.innerHTML += "\n            <div class=\"product\">\n                <img src=\"./img/outline_delete_black_24dp.png\">\n                <img src=\"./img/".concat(item.tagname, ".jpg\">\n                <span>").concat(item.name, "</span>\n            </div>\n            <div class=\"price\">").concat(item.price, " UAH</div>\n            <div class=\"quantity\">                          \n            <img src=\"./img/outline_add_black_24dp.png\"><span>").concat(item.inCart, "</span>\n            <img src=\"./img/outline_remove_black_24dp.png\">\n            </div>\n            <div class=\"total\">\n                ").concat(item.inCart * item.price, ",00 UAH\n            </div>\n            ");
+      productContainer.innerHTML += "\n            <div class=\"product\">\n                <span>".concat(item.name, "</span>\n            </div>\n            <div class=\"price\">").concat(item.price, " UAH</div>\n            <div class=\"quantity\">                          \n            <span>").concat(item.inCart, "</span>\n            </div>\n            <div class=\"total\">\n                ").concat(item.inCart * item.price, ",00 UAH\n            </div>\n            ");
     });
-    productContainer.innerHTML += "\n        <div class=\"baskettotalContainer>\n            <h4 class=\"basketTotalTitle></h4>\n            <h4 class=\"basketTotal\">".concat(cartPrice, ",00 UAH</h4>\n        \n        ");
+    productContainer.innerHTML += "\n        <div class=\"basketTotalContainer>\n            <h4 class=\"basketTotalTitle></h4>\n            <h4 class=\"basketTotal\">".concat(cartPrice, ",00 UAH</h4>\n\n        ");
   }
 }
 
@@ -266,7 +265,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58773" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52419" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
