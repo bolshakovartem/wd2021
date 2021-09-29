@@ -235,6 +235,11 @@ function displayCart() {
   }
 }
 
+document.querySelector(".purchase").onclick = function () {
+  alert("Дякуємо за покупку! Для оновлення корзини перейдіть на головну сторінку!");
+  sessionStorage.clear();
+};
+
 loadCartsNumber();
 displayCart();
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
@@ -265,7 +270,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52419" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53918" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

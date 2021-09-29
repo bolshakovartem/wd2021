@@ -157,4 +157,12 @@ li a {
   width: 10%;
 }
 
+.purchase {
+  border-radius: 10px;
+  background-color: burlywood;
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=/main.77bb5cfd.css.map */

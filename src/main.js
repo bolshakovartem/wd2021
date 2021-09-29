@@ -141,8 +141,12 @@ function displayCart(){
 
         `;
 
-
     }
+}
+
+document.querySelector(".purchase").onclick = function(){
+    alert("Дякуємо за покупку! Для оновлення корзини перейдіть на головну сторінку!");
+    sessionStorage.clear();
 }
     
 
