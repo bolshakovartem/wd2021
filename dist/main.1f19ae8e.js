@@ -236,7 +236,7 @@ function displayCart() {
 }
 
 document.querySelector(".purchase").onclick = function () {
-  alert("Дякуємо за покупку! Для оновлення корзини перейдіть на головну сторінку!");
+  alert("Дякуємо за покупку! Для оновлення корзини перейдіть на головну сторінку або оновіть сторінку!");
   sessionStorage.clear();
 };
 
@@ -270,7 +270,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53918" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57036" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
