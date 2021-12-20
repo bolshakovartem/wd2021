@@ -1,0 +1,26 @@
+<div class="mainTitle">
+    <p>Контактні дані</p>
+</div>
+<div class="main">
+    <div class="first">
+        <p>Залиште свої дані. Ми зв'яжемося з вами</p>
+    </div>
+    <div class="second">
+        <form>
+            <span>Ваш ПІБ:</span>
+            <input type="text" id="nameOpt" placeholder="Введіть ваш ПІБ" #option1>
+            <br>
+            <span>Ваша пошта:</span>
+            <input type="mail" id="emailOpt" placeholder="Введіть вашу пошту" #option2>
+            <button type="button" class="btn-submit" (click)="addOpt1(option1.value)" (click)="addOpt1(option2.value)">Додати дані</button>
+            <br><br>
+        </form>
+    </div>
+    <div class="third">
+        <p>Ваші дані для зв'язку:</p>
+        <li *ngFor="let opt of options">{{opt}}
+            <button class="btn-delete" (click)="deleteOpt(opt)">x</button>
+        </li>
+        <button (click)="Sub()">Підтвердити дані</button>
+    </div>
+</div>

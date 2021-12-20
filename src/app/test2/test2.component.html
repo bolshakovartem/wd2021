@@ -1,0 +1,19 @@
+<div class="mainTitle">
+    <p>Новини</p>
+</div>
+<div class="main">
+    <div class="first">
+        <div class="photo"><img src="{{photoList[0].photo1}}" alt="field"></div>
+        <p class="title">{{photoList[1].photo1name}}</p>
+        <P class="content">{{ShortnewsList.short1}}</P>
+        <p class="qwerty1" *ngIf=isEdit>{{text}}</p>
+        <div style="text-align: center;"><button (click)="add1()" (click)="ShowEdit()"><p>Details</p></button></div>
+    </div>
+    <div class="second">
+        <div class="photo"><img src="{{photoList[0].photo2}}" alt="field"></div>
+        <p class="title">{{photoList[1].photo2name}}</p>
+        <P class="content">{{ShortnewsList.short2}}</P>
+        <p class="qwerty2" *ngIf=isEdit1>{{text1}}</p>
+        <div style="text-align: center;"><button (click)="add2()" (click)="ShowEdit1()"><p>Details</p></button></div>
+    </div>
+</div>

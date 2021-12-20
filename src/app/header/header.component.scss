@@ -1,0 +1,33 @@
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.navTitle{
+    margin: 15px;
+    margin-left: 150px;
+    font-size: 24px;
+}
+.nav{
+    margin: 20px;
+    margin-right: 200px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    font-weight: bold;
+    p{
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+    }
+    p:hover{
+        
+        color: black;
+    }   
+}
